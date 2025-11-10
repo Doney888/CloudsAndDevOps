@@ -1,4 +1,3 @@
-# Используем официальный Python образ вместо Ubuntu
 FROM python:3.9-slim as builder
 
 WORKDIR /app
