@@ -1,0 +1,26 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    privileged: true
+    restart: always
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: supersecret
+      POSTGRES_DB: appdb
+    ports:
+      - "5432:5432"
+    restart: always
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    restart: always
