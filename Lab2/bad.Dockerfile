@@ -3,7 +3,6 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y python3 python3-pip curl wget vim nano
 
-# ОБХОДИМ БЛОКИРОВКУ PIP (плохая практика!)
 RUN pip3 install --break-system-packages flask mysql-connector-python requests pandas numpy
 
 COPY . /app
